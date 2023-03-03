@@ -24,9 +24,9 @@ function bitcoinMining(arr) {
             }
         }
     }
-    console.log(`Bought bitcoins:  ${bought}`);
+    console.log(`Bought bitcoins: ${bought}`);
     if (day !== 0) {
-        console.log(`Day of the first purchased bitcoin ${day}`);
+        console.log(`Day of the first purchased bitcoin: ${day}`);
     }
     console.log(`Left money: ${totalMoneyEarned.toFixed(2)} lv.`)
 }
