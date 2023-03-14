@@ -2,7 +2,7 @@ function phoneBookParser(input) {
     let phoneBook = {};
     for (const line of input) {
         let [name, phoneNumber] = line.split(' ');
-        if (!phoneBook.hasOwnProperty(name)) {
+        if (!name.hasOwnProperty(phoneNumber)) {
             phoneBook[name] = phoneNumber;
         }
 
