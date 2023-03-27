@@ -17,4 +17,9 @@ function loadCommits() {
                     commits.appendChild(li);
                 });
         })
+        .catch((err) => {
+            const li = document.createElement('li');
+            li.textConten = err.message;
+            commits.appendChild(li);
+        })
 }
