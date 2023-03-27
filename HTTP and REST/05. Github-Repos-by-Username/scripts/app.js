@@ -16,4 +16,9 @@ function loadRepos() {
 				repos.appendChild(li);
 			})
 		})
+		.catch((err) => {
+			const li = document.createElement('li');
+            li.textConten = err.message;
+            repos.appendChild(li);
+		})
 }
