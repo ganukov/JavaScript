@@ -6,19 +6,20 @@ function loadRepos() {
 	fetch(`${BASE_URL}${username}/repos`)
 		.then((res) => res.json())
 		.then((data) => {
+			repos.textContent = '';
 			data
-			.forEach((repo) =>{
-				const a = document.createElement('a');
-				a.href = `${repo.html_url}`;
-				a.textContent = `${repo.full_name}`;
-				const li = document.createElement('li');
-				li.appendChild(a);
-				repos.appendChild(li);
-			})
+				.forEach((repo) => {
+					const a = document.createElement('a');
+					a.href = `${repo.html_url}`;
+					a.textContent = `${repo.full_name}`;
+					const li = document.createElement('li');
+					li.appendChild(a);
+					repos.appendChild(li);
+				})
 		})
 		.catch((err) => {
 			const li = document.createElement('li');
-            li.textConten = err.message;
-            repos.appendChild(li);
+			li.textConten = err.message;
+			repos.appendChild(li);
 		})
 }
