@@ -28,6 +28,9 @@ function attachEvents() {
                 }
 
             })
+            .catch((err) => {
+                console.log(err.message)
+            })
     }
 
     function handlePost() {
@@ -35,7 +38,7 @@ function attachEvents() {
         const allOptions = document.getElementById('posts');
         const selectedOption = allOptions.selectedOptions[0].value;
         const title = allOptions.selectedOptions[0].textContent;
-        
+
 
         fetch(comentsUrl)
             .then((res) => res.json())
@@ -61,6 +64,9 @@ function attachEvents() {
 
                 }
 
+            })
+            .catch((err) => {
+                console.log(err.message)
             })
     }
 }
