@@ -1,3 +1,6 @@
+
+
+
 function attachEvents() {
     const loadPosts = document.getElementById('btnLoadPosts');
     const viewPost = document.getElementById('btnViewPost');
