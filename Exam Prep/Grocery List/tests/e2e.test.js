@@ -131,7 +131,7 @@ describe('E2E tests', function () {
       const allProduct = await page.$$eval(`.list input`, (t) =>
         t.map((s) => s.value)
       );
-
+      
       expect(allProduct[0]).to.include('Milk');
       expect(allProduct[1]).to.include('2');
       expect(allProduct[2]).to.include('3');
