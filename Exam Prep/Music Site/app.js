@@ -1,6 +1,7 @@
 window.addEventListener('load', solve);
 
 function solve() {
+    let totalLikes = 0;
     const genreInput = document.getElementById('genre');
     const nameInput = document.getElementById('name');
     const authorInput = document.getElementById('author');
@@ -70,24 +71,20 @@ function solve() {
     }
 
     function likeSongHandler() {
-        let totalLikes = Number(document.getElementsByClassName('likes')[0].children[0].textContent.split(' ')[2]);
+        this.setAttribute('disabled', true)
         totalLikes++;
         totalLikesContainer.textContent = `Total Likes: ${totalLikes}`;
-        this.disabled = true;
+
     }
 
     function saveSongHandler() {
         const hitsContainer = document.getElementsByClassName('hits-info')[0];
         const likeBtn = hitsContainer.getElementsByClassName('like-btn')[0];
         const saveBtn = hitsContainer.getElementsByClassName('save-btn')[0];
-        hitsContainer.removeChild(likeBtn);
-        hitsContainer.removeChild(saveBtn);
-        hitsContainer.cloneNode(true);
         savedContainer.appendChild(hitsContainer);
 
-        const parent = this.parentElement;
-        const grandParent = this.parentElement.parentElement;
-        grandParent.removeChild(parent);
+        likeBtn.remove()
+        saveBtn.remove()
 
     }
 
